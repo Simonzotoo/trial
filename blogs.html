@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name="description" content="Read inspiring blogs from Hannah Yawson Ministry - spiritual insights, devotionals, and ministry updates">
+  <title>Blogs - HANNAH YAWSON MINISTRY (HYM)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+
+    :root {
+  --primary: #4B0082;
+  --secondary: #FFD700;
+  --light: #f9f9f9;
+  --dark: #333;
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile nav behavior */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+    :root {
+      --primary: #4B0082;
+      --primary-light: #6A3093;
+      --secondary: #FFD700;
+      --accent: #8A2BE2;
+      --light: #f9f9f9;
+      --dark: #333;
+      --gray: #e0e0e0;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+    
+    nav a:hover:after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: var(--secondary);
+    }
+    
+    nav a.active {
+      color: var(--secondary);
+    }
+    
+    nav a.active:after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .blog-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: 
+        linear-gradient(rgba(75,0,130,0.85), rgba(75,0,130,0.85)), 
+        url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color: white;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 1.5rem;
+      animation: fadeInDown 1s ease;
+    }
+    
+    .hero-content p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin-bottom: 2.5rem;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    /* Blog Section */
+    .blog-section {
+      padding: 5rem 0;
+    }
+    
+    .blog-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: var(--transition);
+      border: 1px solid var(--gray);
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .blog-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .blog-content {
+      padding: 2rem;
+    }
+    
+    .blog-date {
+      color: var(--primary-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .blog-date i {
+      color: var(--secondary);
+    }
+    
+    .blog-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .blog-excerpt {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+    
+    .read-more {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .read-more:hover {
+      color: var(--primary-light);
+    }
+    
+    .blog-video {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    
+    .blog-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    
+    .page-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+      border: 1px solid var(--gray);
+    }
+    
+    .page-number.active, .page-number:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+      background: var(--primary);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+    
+    .newsletter-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-container h2 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      border-radius: 50px;
+      border: none;
+      font-family: 'Raleway', sans-serif;
+    }
+    
+    .newsletter-form .btn {
+      background: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    
+    .newsletter-form .btn:hover {
+      background: white;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 0 1.5rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .social-links-footer {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links-footer a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    
+    .social-links-footer a:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      .logo-container {
+        margin-bottom: 1rem;
+      }
+      
+      nav {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .blog-hero {
+        min-height: auto;
+        padding: 6rem 1rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<header data-aos="fade-down">
+  <div class="container header-container">
+    <div class="logo-container">
+      <img src="images\hymlogonew.png
+      " alt="Logo" class="logo-img">
+      <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+    </div>
+
+    <!-- Hamburger button (shown on mobile) -->
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation menu -->
+    <nav id="main-nav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="eventsandnews.html">Events and News</a>
+      <a href="blogs.html" >Blogs</a>
+       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  
+  <main>
+    <section class="blog-hero" data-aos="fade">
+      <div class="hero-content">
+        <h1>Spiritual Insights & Ministry Updates</h1>
+        <p>Explore our collection of inspiring blogs, devotionals, and ministry updates to nourish your faith journey.</p>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <h2 data-aos="fade-up">Latest Blog Posts</h2>
+        
+        <div class="blog-container">
+  <!-- Blog Post 1 -->
+  <div class="blog-container">
+  <!-- Blog Post 1 -->
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="blog-media">
+      <img src="images\BOREHOLE2.jpg" alt="BOREHOLE FOR ASIKABEW IN THE EASTERN REGION OF GHANA" class="blog-image">
+      
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> June 15, 2025
+      </div>
+      <h3>Images: Construction of a Borehole for Asikabew</h3>
+      <p class="blog-excerpt">Photos from Asikabew in the Eastern Region of Ghana where we financed construction of a Borehole to provide the community with portable water..</p>
+      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article>
+
+  <!-- Blog Post 2 -->
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="blog-media">
+      <video class="blog-image" controls>
+        <source src="images\watervid3.mp4" type="video/mp4">
+      </video>
+    
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> June 8, 2025
+      </div>
+      <h3>Video: Construction of a Borehole for Asikabew </h3>
+      <p class="blog-excerpt">Videos and photos from Asikabew in the Eastern Region of Ghana where we financed construction of a Borehole to provide the community with portable water</p>
+      <a href="#" class="read-more">Watch Now <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article>
+
+  <!-- Blog Post 3 -->
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="blog-media">
+     
+      <img src="images\borehole5.jpg" alt="More Outreach" class="blog-image">
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> June 1, 2025
+      </div>
+      <h3>Images: Construction of a Borehole for Asikabew</h3>
+      <p class="blog-excerpt">Videos and photos from Asikabew in the Eastern Region of Ghana where we financed construction of a Borehole to provide the community with portable water...</p>
+      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article>
+
+
+  <!-- The new blogs from Nsawam Prison -->
+
+
+
+   <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="blog-media">
+     <img class="blog-image" src="images\BUILDING 2.jpg" alt="Building Image">
+
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> 
+      </div>
+      <h3>Construction of a Diagnostic Center at the Nsawam Female Prison in Ghana.</h3>
+      <p class="blog-excerpt">Hannah Yawson Ministries (HYM) is supporting the construction of a Diagnostic Center at the Nsawam Female Prison in Ghana. The center will provide individualized treatment and reformation programs tailored to the needs of female inmates. Through this initiative, HYM demonstrates its compassionate and transformative approach, preparing women for successful reintegration into society and empowering them to embrace renewed lives of dignity and hope...</p>
+      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article>
+
+  <!-- Blog Post 4 -->
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="blog-media">
+      <img class="blog-image" src="images\BUILDING 3.jpg" alt="Building Image">
+
+    
+    </div>
+<div class="blog-content">
+  <div class="blog-date">
+    <i class="far fa-calendar-alt"></i> 
+  </div>
+  <h3>Construction of a Diagnostic Center at the Nsawam Female Prison in Ghana</h3>
+  <p class="blog-excerpt">
+    We have begun building a Diagnostic Center at the Nsawam Female Prison to provide 
+    inmates with access to essential healthcare services such as lab tests, disease 
+    screening, and maternal care. This project, made possible through generous donations 
+    and community support, aims to improve the well-being of women in custody and ensure 
+    they receive timely medical attention. 
+  </p>
+  <p class="blog-excerpt">
+    Watch photos and videos from the second donation and see how the project is progressing.
+  </p>
+  <a href="#" class="read-more">Watch Now <i class="fas fa-arrow-right"></i></a>
+</div>
+</article>
+
+
+  <!-- Blog Post 5 -->
+<article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+  <img class="blog-image" src="images\BUILDING 4.jpg" alt="Building Image">
+
+  <div class="blog-content">
+    <div class="blog-date">
+      <i class="far fa-calendar-alt"></i> 
+    </div>
+    <h3>Construction of a Diagnostic Center at the Nsawam Female Prison in Ghana</h3>
+    <p class="blog-excerpt">
+      The construction of the Diagnostic Center at the Nsawam Female Prison is progressing 
+      steadily, with major milestones already achieved. From laying the foundation to raising 
+      the main structure, the project has seen remarkable growth in just a short time. 
+    </p>
+    <p class="blog-excerpt">
+      Once completed, the center will provide inmates with access to vital healthcare 
+      services including routine checkups, lab testing, and preventive care helping to 
+      improve their overall health and well-being. We are excited to share each phase of 
+      this journey and look forward to its completion, which will bring lasting impact to 
+      the prison community.
+    </p>
+    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </div>
+</article>
+
+
+
+  <!-- Blog Post 4 
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="blog-media">
+      <img src="images/blog4.jpg" alt="Bible Study" class="blog-image">
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> May 25, 2025
+      </div>
+      <h3>Understanding God's Covenant Promises</h3>
+      <p class="blog-excerpt">A deep dive into the covenant relationship God establishes with His people throughout Scripture...</p>
+      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article> -->
+
+  <!-- Blog Post 5 
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="blog-media">
+      <video class="blog-image" controls>
+        <source src="images/blog5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> May 18, 2025
+      </div>
+      <h3>Video: The Fruit of the Spirit - Love</h3>
+      <p class="blog-excerpt">The first in our series examining the fruit of the Spirit, focusing on the foundational virtue of love...</p>
+      <a href="#" class="read-more">Watch Now <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article> 
+
+  <!-- Blog Post 6 
+  <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="blog-media">
+      <img src="images/blog6.jpg" alt="Worship" class="blog-image">
+      <video class="blog-image" controls>
+        <source src="images/blog6.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="blog-content">
+      <div class="blog-date">
+        <i class="far fa-calendar-alt"></i> May 11, 2025
+      </div>
+      <h3>Creating a Lifestyle of Worship</h3>
+      <p class="blog-excerpt">How to move beyond Sunday worship to developing a daily posture of worship in all aspects of life...</p>
+      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </article> -->
+</div>
+
+<style>
+.blog-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-media img,
+.blog-media video {
+  width: 100%;
+  border-radius: 10px;
+}
+</style>
+
+  </article>
+</div>
+
+<style>
+.blog-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-media img,
+.blog-media video {
+  width: 100%;
+  border-radius: 10px;
+}
+</style>
+
+          </article>
+        </div>
+        
+       <!-- <div class="pagination" data-aos="fade-up">
+          <a href="#" class="page-number active">1</a>
+          <a href="#" class="page-number">2</a>
+          <a href="#" class="page-number">3</a>
+          <a href="#" class="page-number">4</a>
+          <a href="#" class="page-number">5</a>
+        </div>
+      </div> -->
+    </section>
+    
+  
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>HANNAH YAWSON MINISTRY</h3>
+          <p>Empowering generations through spiritual guidance and community development.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Our Ministry</a></li>
+            <li><a href="programs.html">Our Programs</a></li>
+            <li><a href="testimonials.html">Life Transformations</a></li>
+            <li><a href="blog.html">Spiritual Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:info@hannahyawsonministry.org">info@hyministry.org</a></li>
+            <li><a href="tel:+2330539871778">(+233) 053-987-1778</a></li>
+            <li><a href="tel:+2330264430204">(+233) 026-443-0204</a></li>
+            <li>W185 Corolla Street, Anyaa, Accra, Ghana</li>
+          </ul>
+        </div>
+       </div>
+
+       <div class="social-links">
+      
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 HANNAH YAWSON MINISTRY (HYM). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+ <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('#main-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+  
+</body>
+</html>

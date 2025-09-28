@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>About HYM | Hannah Yawson Ministry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+      --primary: #4B0082;
+      --secondary: #FFD700;
+      --light: #f9f9f9;
+      --dark: #333;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero-about {
+      background: linear-gradient(rgba(75, 0, 130, 0.8), rgba(75, 0, 130, 0.8)), 
+                  url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-about h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-about p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    /* About Content */
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .about-intro {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    .about-img {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-img img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .signature {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Cards Section */
+    .card-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .about-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--secondary);
+      transition: var(--transition);
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    /* Leadership Section */
+    .leadership-section {
+      margin: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+    }
+
+    .leader {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .leader-img {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .leader-img img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .leader-info {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .leader-info h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .leader-info p {
+      margin-bottom: 1rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      max-width: 600px;
+      padding: 2.5rem;
+      margin: 4rem auto;
+      text-align: center;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background: linear-gradient(45deg, var(--secondary), #FFA500);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      margin: 0 10px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    footer p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+
+      nav.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav.nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-about h2 {
+        font-size: 2rem;
+      }
+
+      .hero-about p {
+        font-size: 1rem;
+      }
+
+      .about-intro {
+        gap: 2rem;
+      }
+
+      .leader {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .leader-img img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<header data-aos="fade-down">
+  <div class="container header-container">
+    <div class="logo-container">
+      <img src="images/hymlogonew.png" alt="Logo" class="logo-img">
+      <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="main-nav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="eventsandnews.html">Events and News</a>
+      <a href="blogs.html">Blogs</a>
+       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-about" data-aos="fade">
+  <h2>Welcome to Hannah Yawson Ministry</h2>
+  <p>HYM believes in living out God's call to serve others. Through our various outreach programs, we strive to bring comfort, guidance, and tangible support to those who are often forgotten or overlooked.</p>
+</section>
+
+<main class="about-container">
+  <!-- About Section -->
+  <section class="about-intro">
+    <div class="about-img" data-aos="fade-right">
+      <img src='images/REV HELINA YAWSON.jpg' alt='Rev. Hannah Yawson'>
+    </div>
+    <div class="about-text" data-aos="fade-left">
+      <h2>Our Ministry Calling</h2>
+      <p>We are delighted to welcome you to Hannah Yawson Ministries (HYM), a Christian NGO, a place where compassion meets action. We are the hands and feet of Christ, bringing hope, healing, and renewal to all we encounter. Our ministry is rooted in Jesus' call to serve the vulnerable and marginalized with love, dignity, and hope.</p>
+      <p>Through our ministries, we seek to bring God's light and healing to those in need, walking alongside them on their journey toward transformation.</p>
+      <p>Founded by Rev. Hannah Yawson, our ministry has grown from a humble beginning to become a beacon of hope in our community, touching thousands of lives through our various outreach programs and spiritual initiatives.</p>
+      <p class="signature">- Rev. Hannah Aba Yawson</p>
+    </div>
+  </section>
+
+  <section class="card-section">
+    <div class="about-card" data-aos="fade-up">
+      <div class="icon">
+        <i class="fas fa-cross"></i>
+      </div>
+      <h3>About HYM</h3>
+      <p>HYM is a non-profit Christian organization dedicated to showing God's love through spiritual and social services. Guided by the teachings of Matthew 25:40, we believe that each person is worthy of compassion, respect, and the fullness of life.</p>
+    </div>
+    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="icon">
+        <i class="fas fa-hands-praying"></i>
+      </div>
+      <h3>Our Vision</h3>
+      <p>Our vision is to be a beacon of hope, restoring dignity and transforming lives through the love of Christ.</p>
+    </div>
+    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="icon">
+        <i class="fas fa-people-group"></i>
+      </div>
+      <h3>Our Mission</h3>
+      <p>HYM exists to reflect God's love and compassion by serving those who are vulnerable and marginalized. We are dedicated to empowering individuals and communities through spiritual guidance, practical support, and acts of service.</p>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="leadership-section" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Our Leadership Team</h2>
+      <p>Meet the dedicated individuals guiding Hannah Yawson Ministry</p>
+    </div>
+
+    <div class="leader" data-aos="fade-up">
+      <div class="leader-img">
+        <img src="images/REV SELINA 3.jpg" alt="Rev. Hannah Aba Yawson">
+      </div>
+      <div class="leader-info">
+        <h3>Reverend Hannah Aba Yawson – President</h3>
+        <p>Reverend Hannah Aba Yawson is a dedicated leader with over 25 years of experience in social policy, development, and ministry. As the President of Hannah Yawson Ministry (HYM), she leads the organization's mission to uplift vulnerable individuals and communities and foster spiritual growth.</p>
+        <p>As an experienced development practitioner, dynamic inspirational speaker, and dedicated revivalist, Reverend Hannah has positively impacted countless lives through her ministry work. She is passionate about guiding individuals in deepening their relationship with God and supporting their journey towards holistic well-being.</p>
+        <p>With a background in trauma care, Rev. Yawson offers compassionate guidance to individuals and communities affected by hardship. Her dedication to social justice and women's empowerment was demonstrated during her service on the Discharge Board of Nsawam Female Prison in Ghana.</p>
+      </div>
+    </div>
+
+
+
+    <div class="leader" data-aos="fade-up">
+      <div class="leader-img">
+        <img src="images/Gideon-Porbley image Ashesi and JAKF sites.webp" alt="Mr. Gideon Hosu-Porbley">
+      </div>
+      <div class="leader-info">
+        <h3>Dr. Gideon Hosu-Porbley – Director</h3>
+        <p>Gideon Hosu-Porbley is a seasoned international development research and monitoring & evaluation practitioner with over 20 years of experience. He possesses enormous skills in strategy development, project planning, and management, with thematic expertise in migration, education, gender, HIV/AIDS, environment, and governance.</p>
+        <p>Gideon holds academic degrees in Geography and Resource Development, Migration Studies, Development Studies, and Public Policy. He has received Visiting Fellowship Awards at the Institute of Development Studies, University of Sussex, UK, and serves as a lecturer at Ashesi University, Ghana.</p>
+      </div>
+    </div>
+
+    <div class="leader" data-aos="fade-up">
+      <div class="leader-img">
+        <img src="images/DR.CRISTY.JPG" alt="Dr. Christiana Adu-Takyi">
+      </div>
+      <div class="leader-info">
+        <h3>Dr. Christiana Adu-Takyi – Director</h3>
+        <p>Dr. Christiana Adu-Takyi is a medical practitioner, a Paediatric Cardiologist who has special interest in children with congenital and acquired heart diseases. This she translates in her own personal ministry with a passion to see others especially children and young adults have a heart of total submission to the power of God.</p>
+        <p>She is involved in medical Christian outreaches to the primary and senior high schools.</p>
+      </div>
+    </div>
+
+    <div class="leader" data-aos="fade-up">
+      <div class="leader-img">
+        <img src="images/ALFRED KODUA.jpg" alt="Mr. Alfred Koduah">
+      </div>
+      <div class="leader-info">
+        <h3>Mr. Alfred Koduah – Director</h3>
+        <p>Alfred Koduah is a dedicated leader driven by a passion for lasting social change. With a strong commitment to serving underserved communities, he provides support in education, healthcare, and financial aid.</p>
+        <p>As a seasoned minister of the gospel with over 12 years of experience in preaching, teaching, and Human Resource Management, Alfred combines organizational expertise with a deep commitment to guiding others in faith. His leadership is characterized by compassion, integrity, and a sense of purpose that reflects the love and grace of Jesus Christ.</p>
+      </div>
+    </div>
+
+        <div class="leader" data-aos="fade-up">
+      <div class="leader-img">
+        <img src="images/REV YAWSON.jpg" alt="Rev. Isaac Kwafo Yawson">
+      </div>
+      <div class="leader-info">
+        <h3>Reverend Isaac Kwafo Yawson – Board Chairman</h3>
+        <p>Reverend Isaac Yawson is a business administration expert and a social work professional. He has over 25 years of experience in academia, management consultancy, and counselling. His experience spans corporate restructuring and business process re-engineering.</p>
+        <p>He also provides consultations in church administration and finance. He is a lecturer at the university and offers spiritual support and counselling to students and the academic community.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" data-aos="zoom-in">
+    <h2>Join Our Mission</h2>
+    <p>Partner with us to bring hope and transformation to more lives</p>
+    <a href="contact.html" class="btn">Get Involved Today</a>
+  </section>
+</main>
+
+<footer>
+     <div class="social-links">
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+  <p>&copy; 2025 Hannah Yawson Ministry. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 120
+  });
+
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('#main-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>

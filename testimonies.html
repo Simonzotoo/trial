@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Life Transformations - Hannah Yawson Ministry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+      --primary: #4B0082;
+      --secondary: #FFD700;
+      --light: #f9f9f9;
+      --dark: #333;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+      text-decoration: none;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      cursor: pointer;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 3rem;
+      position: relative;
+      text-align: center;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: var(--secondary);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    main {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .testimonial-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .testimonial-intro p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      position: relative;
+      border-top: 4px solid var(--secondary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-card:before {
+      content: '"';
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: rgba(138, 43, 226, 0.1);
+      top: -10px;
+      left: 10px;
+      line-height: 1;
+    }
+
+    .testimonial-content {
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+
+    .author-info {
+      line-height: 1.4;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .author-title {
+      font-size: 0.85rem;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+
+    .ministry-tag {
+      display: inline-block;
+      background: rgba(75, 0, 130, 0.1);
+      color: var(--primary);
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    /* Audio Player Styles */
+    .audio-player {
+      width: 100%;
+      margin: 1rem 0;
+      border-radius: 20px;
+      background: rgba(75, 0, 130, 0.05);
+    }
+
+    audio::-webkit-media-controls-panel {
+      background: rgba(75, 0, 130, 0.1);
+      border-radius: 20px;
+    }
+
+    /* Audio Slideshow Section */
+    .audio-slideshow {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .slideshow-container {
+      position: relative;
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .testimony-slide {
+      display: none;
+      text-align: center;
+      animation: fade 1.5s ease;
+    }
+
+    .testimony-slide.active {
+      display: block;
+    }
+
+    .testimony-slide img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--secondary);
+      margin-bottom: 1rem;
+    }
+
+    .testimony-slide h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .testimony-slide p {
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    .slideshow-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .slideshow-dot {
+      height: 12px;
+      width: 12px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .slideshow-dot.active {
+      background-color: var(--primary);
+    }
+
+    .slideshow-arrows {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .slideshow-arrow {
+      font-size: 2rem;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 0 1rem;
+      pointer-events: auto;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+
+    .slideshow-arrow:hover {
+      opacity: 1;
+    }
+
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
+
+    .cta-section {
+      text-align: center;
+      background: linear-gradient(rgba(75, 0, 130, 0.9), rgba(75, 0, 130, 0.9)), 
+       url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .social-links {
+      margin: 1rem 0;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+    }
+
+    footer p {
+      margin: 0.5rem 0 0;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .menu-toggle {
+        display: block;
+      }
+      
+      nav.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav.nav-links.active {
+        display: flex;
+      }
+      
+      .slideshow-arrow {
+        font-size: 1.5rem;
+      }
+      
+      .testimony-slide img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down">
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="images/hymlogonew.png" alt="Logo" class="logo-img">
+        <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="main-nav" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="testimonies.html" class="active">Testimonies</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="eventsandnews.html">Events and News</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="testimonial-intro">
+      <h2 data-aos="fade-up">Transformed Lives</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Witness the power of God's love through these testimonies of redemption, healing, and restoration from our various ministries.</p>
+    </div>
+    
+    <!-- Audio Slideshow Section -->
+    <section class="audio-slideshow" data-aos="fade-up">
+      <h2>Hear Their Voices</h2>
+      <div class="slideshow-container">
+        <div class="slideshow-arrows">
+          <div class="slideshow-arrow prev" onclick="changeSlide(-1)">❮</div>
+          <div class="slideshow-arrow next" onclick="changeSlide(1)">❯</div>
+        </div>
+        
+       <!-- <div class="testimony-slide active">
+          <img src="" alt="">
+          <h3>Kwame's Transformation</h3>
+          <p>"Through HYM's prison ministry, I encountered Christ in my darkest hour..."</p>
+          <audio controls class="audio-player">
+            <source src="audio/kwame-testimony.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        
+        <div class="testimony-slide">
+          <img src="images/testimonials/youth.jpg" alt="Emmanuel K.">
+          <h3>Emmanuel's Journey</h3>
+          <p>"After juvenile detention, I felt hopeless until HYM's mentors showed me God's plan..."</p>
+          <audio controls class="audio-player">
+            <source src="audio/emmanuel-testimony.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        
+        <div class="testimony-slide">
+          <img src="images/testimonials/child.jpg" alt="Ama S.">
+          <h3>Ama's Story</h3>
+          <p>"When my mother was incarcerated, HYM became my family..."</p>
+          <audio controls class="audio-player">
+            <source src="audio/ama-testimony.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div> 
+        
+        <div class="slideshow-nav">
+          <span class="slideshow-dot active" onclick="goToSlide(0)"></span>
+          <span class="slideshow-dot" onclick="goToSlide(1)"></span>
+          <span class="slideshow-dot" onclick="goToSlide(2)"></span>
+        </div>
+      </div> 
+    </section> -->
+    
+    <div class="testimonial-grid">
+      <!--  Ministry Testimony -->
+      <div class="testimonial-card" data-aos="fade-up">
+        <span class="ministry-tag"> Testimony </span>
+      <div class="testimonial-content">
+      <h3>Renewed, Healed, and Spirit-Filled</h3>
+      <p>
+        At 86, I thought my ministry journey was over, but joining HYM has brought a fresh move of God in my life. 
+        I received the baptism of the Holy Spirit, the School of Ministry has deepened my understanding of God’s Word, 
+        and I have found a loving family in Christ. Most wonderfully, the Lord healed me from years of chronic arthritis pain, 
+        and today I feel renewed, healthy, and full of purpose.
+      </p>
+      <p><strong>— Merlene (USA)</strong></p>
+    </div>
+        <div class="testimonial-author">
+        </div>
+      </div>
+
+      <!-- Juvenile Aftercare Testimony -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="ministry-tag"> Testimony</span>
+        <div class="testimonial-content">
+           <h3>From Coma to Complete Restoration </h3>
+          " My little niece, just 7 years old, was involved in a car accident and went into a coma for six days. I believed God could raise her because, since joining HYM, I had witnessed and heard of many being healed, delivered, and restored.
+              On Sunday, June 22, I brought the request before the ministry, and the whole fellowship stood in prayer with me. To the glory of God, my niece came out of the coma the very next day! Today, she has been discharged from the hospital and is doing well.
+              I thank God so much for this miracle, and I am grateful for HYM—a ministry that truly intercedes and a God who faithfully hears and answers."
+              
+<p><strong>— Alex (USA)</strong></p>
+        </div>
+       
+      </div>
+  
+      <!-- Children's Ministry Testimony  -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="ministry-tag">Testimony</span>
+        <div class="testimonial-content">
+           <h3>From Pain to Purpose  </h3>
+         
+          "For four months, I endured excruciating pain that made it difficult to walk without an aid. In a moment of despondency, I joined the HYM afternoon fellowship, holding on to faith and refusing to give up. There, Jesus touched me and healed me completely.
+          My long desire to actively participate in ministry has now been fulfilled. Today, I not only walk in health but also pray for others and witness them receive their healing. The spiritual gifts within me have been awakened, and I am restored and empowered for God’s service." <p><strong>— Elizabeth (USA)</strong></p>
+        </div>
+     
+      </div>
+
+      <!-- Hospital Ministry Testimony -->
+      <div class="testimonial-card" data-aos="fade-up">
+        <span class="ministry-tag">Testimony</span>
+        <div class="testimonial-content">
+          <h3> Breakthrough at Last </h3>
+          "After losing my job, I searched tirelessly for nine months without success. Then, a dear friend invited me to the HYM in-person retreat on August 10, 2025. Right there during the retreat, I received a call from one of the companies I had applied to. I was interviewed shortly after, and within a week, I received my offer letter!
+            I am overjoyed and deeply grateful to God for this breakthrough. Truly, He makes all things beautiful in His time."
+          <p><strong>— Kay (Ghana)</strong></p>
+        </div>
+      </div>
+
+      <!-- Revival Service Testimony  -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+        <span class="ministry-tag">Testimony</span>
+        <div class="testimonial-content">
+          <h3> Hope Restored, Doors Opened </h3>
+          "Relocating to Scotland to join my family was my greatest joy, but after two years of being unable to secure a job, my hopes and aspirations were almost dashed. Then I joined the HYM prayer services, and my faith was strengthened.
+            Within just a month, I wrote and passed my health professional exams, and in the same month, I was offered a good job. I give all the glory to God for turning my situation around! "
+          <p><strong>— Courage (Scotland)</strong></p>
+</div>
+        
+      
+      </div>
+
+      <!-- Women's Ministry Testimony -->
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+        <span class="ministry-tag">Testimony</span>
+        <div class="testimonial-content">
+           <h3> From Grief to Joy</h3>
+          "God Restored Me ! I lost my first pregnancy and was filled with grief and sorrow. But through Rev. Hannah’s daily prayers with me, my faith was lifted. I held firmly to the words of prophecy, waged warfare with them, and trusted God to fulfil His Word.
+          To the glory of God, precisely one year later, in the very same month I had experienced the loss, the Lord blessed us with a beautiful baby boy. What was once a season of mourning has now become a testimony of joy and restoration.
+          Joining HYM has not only brought this miracle but has also deepened my knowledge and experience of God. Truly, He is faithful!"
+          <p><strong>— Mimi (Ghana)</strong></p>
+        </div>
+      
+        <div class="testimonial-author">
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section" data-aos="zoom-in">
+      <h3>Your Story Could Be Next</h3>
+      <p>Experience God's transforming power through our ministries</p>
+      <a href="contact.html" class="btn">Connect With Us Today</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+    <p>&copy; 2025 Hannah Yawson Ministry. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Mobile menu toggle
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('#main-nav');
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Audio Slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimony-slide');
+    const dots = document.querySelectorAll('.slideshow-dot');
+    
+    function showSlide(n) {
+      // Pause all audio elements when changing slides
+      document.querySelectorAll('.testimony-slide audio').forEach(audio => {
+        audio.pause();
+      });
+      
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      
+      // Remove active class from all dots
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      
+      // Handle wrap-around for slides
+      if (n >= slides.length) {
+        currentSlide = 0;
+      } else if (n < 0) {
+        currentSlide = slides.length - 1;
+      } else {
+        currentSlide = n;
+      }
+      
+      // Show current slide and activate corresponding dot
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+    
+    function changeSlide(n) {
+      showSlide(currentSlide + n);
+    }
+    
+    function goToSlide(n) {
+      showSlide(n);
+    }
+    
+    // Auto-advance slides every 10 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 10000);
+    
+    // Initialize first slide
+    showSlide(0);
+  </script>
+</body>
+</html>

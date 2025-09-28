@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta name="description" content="Hannah Yawson Ministry - Empowering youth, women, and communities through spiritual guidance and leadership development">
+  <title>HANNAH YAWSON MINISTRY (HYM) | Spiritual Empowerment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <style>
+    :root {
+      --primary: #4B0082;
+      --primary-light: #6A3093;
+      --secondary: #f4b20be6;
+      --accent: #8A2BE2;
+      --light: #f9f9f9;
+      --dark: #333;
+      --gray: #e0e0e0;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background: var(--light);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    nav a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+    
+    nav a:hover:after {
+      width: 100%;
+    }
+     
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      z-index: 999;
+    }
+
+    /* Hero Carousel */
+    .hero-carousel {
+      width: 100%;
+      height: 90vh;
+      position: relative;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .swiper-slide::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(75, 0, 130, 0.6);
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .slide-content h2 {
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .slide-content p {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      background: linear-gradient(45deg, var(--secondary), #FFA500);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+
+    .swiper-pagination-bullet {
+      background: white;
+      opacity: 0.7;
+      width: 12px;
+      height: 12px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--secondary);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--secondary);
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      backdrop-filter: blur(5px);
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: 1.5rem;
+    }
+
+    /* Video Section */
+    .video-section {
+      padding: 5rem 0;
+      background: white;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .video-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-info {
+      padding: 1.5rem;
+      background: white;
+    }
+
+    .video-info h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* School of Ministry Section */
+    .school-section {
+      padding: 5rem 0;
+      background: #f5f5f5;
+    }
+
+    .school-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .school-media {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .school-media-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .school-media-item.video {
+      grid-column: span 2;
+    }
+
+    .school-media-item img, 
+    .school-media-item iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .school-content {
+      padding: 0 1.5rem;
+    }
+
+    .school-content h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Pillars Section */
+    .pillars {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .pillar {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: var(--transition);
+      border: 1px solid var(--gray);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pillar:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      border-color: var(--primary-light);
+    }
+    
+    .pillar-image {
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+    }
+    
+    .pillar-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .pillar:hover .pillar-image img {
+      transform: scale(1.05);
+    }
+    
+    .pillar i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .pillar h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 500px;
+      margin: 0 auto;
+      border: 1px solid var(--gray);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .testimonial-text:before,
+    .testimonial-text:after {
+      content: '"';
+      font-size: 3rem;
+      color: var(--gray);
+      position: absolute;
+    }
+    
+    .testimonial-text:before {
+      top: -1rem;
+      left: -1.5rem;
+    }
+    
+    .testimonial-text:after {
+      bottom: -2.5rem;
+      right: -1rem;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+    }
+    
+    /* CTA Section */
+    .cta {
+      padding: 5rem 0;
+      text-align: center;
+      background: var(--primary);
+      color: white;
+    }
+    
+    .cta h2 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 0 1.5rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--secondary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .school-container {
+        grid-template-columns: 1fr;
+      }
+
+      .school-media {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      .logo-container {
+        margin-bottom: 1rem;
+      }
+      
+      nav {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-carousel {
+        height: 80vh;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn-outline {
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .school-media {
+        grid-template-columns: 1fr;
+      }
+
+      .school-media-item.video {
+        grid-column: span 1;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<header data-aos="fade-down">
+  <div class="container header-container">
+    <div class="logo-container">
+      <img src="images/hymlogonew.png" alt="Logo" class="logo-img">
+      <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="main-nav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="eventsandnews.html">Events and News</a>
+      <a href="blogs.html">Blogs</a>
+       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Carousel Section -->
+  <section class="hero-carousel swiper" data-aos="fade">
+    <div class="swiper-wrapper">
+      <!-- Slide 1  -->
+      <div class="swiper-slide" style="background-image: url('images/SCHOOL2.jpg')">
+        <div class="slide-content">
+          <h2>Empowering Generations Through Faith</h2>
+          <p>Transforming lives through spiritual guidance, leadership development, and community empowerment</p>
+          <div class="hero-buttons">
+            <button class="btn" onclick="location.href='contact.html';">Join Our Ministry</button>
+            <button class="btn btn-outline" onclick="location.href='programs.html';">Our Programs</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 2  -->
+      <div class="swiper-slide" style="background-image: url('images/carousel1.jpg')">
+        <div class="slide-content">
+          <h2>Transformational services</h2>
+          <p>Bringing transformation, hope and redemption to individuals and their families</p>
+          <div class="hero-buttons">
+            <button class="btn" onclick="location.href='contact.html';">Get Involved</button>
+            <button class="btn btn-outline" onclick="location.href='programs.html';">Learn More</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="swiper-slide" style="background-image: url('images/prisons7.JPG')">
+        <div class="slide-content">
+          <h2>Prison Ministry Outreach</h2>
+          <p>Helping prisoners in diverse ways </p>
+          <div class="hero-buttons">
+            <button class="btn" onclick="location.href='contact.html';">Enroll Now</button>
+            <button class="btn btn-outline" onclick="location.href='programs.html';">View Courses</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-title">
+        <h2>Recent happenings </h2>
+        <p>Watch our latest source of hope and transformation</p>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-container">
+            <iframe src="images\indexvidd.mp4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Compassionate ministry</h3>
+            <p>Helping people at the Shai-Osudoku district hospital Dodowa, Ghana.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-container">
+            <iframe src="images\watervid2-trim.mp4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h3>Construction of a Borehole for Asikabew in the Eastern Region of Ghana</h3>
+            <p></p>
+          </div>
+        </div>
+
+     
+      </div>
+    </div>
+
+    
+  </section>
+
+  <!-- School of Ministry Section -->
+  <section class="school-section" data-aos="fade-up">
+    <div class="container">
+      <div class="section-title">
+        <h2>School of Ministry</h2>
+        <p>Training and equipping believers for effective ministry</p>
+      </div>
+
+      <div class="school-container">
+        <div class="school-media">
+           <div class="school-media-item">
+            <img src="images\Service1 .png" alt="School of Ministry Class">
+          </div>
+          <div class="school-media-item">
+            <img src="images\induction new.jpg" alt="School of Ministry Class">
+          </div>
+         <div class="school-media-item">
+            <img src="images\wednesdays.jpg" alt="School of Ministry Class">
+          </div>
+          <div class="school-media-item">
+            <img src="images\miracle new.jpg" alt="School of Ministry Class">
+          </div>
+        </div>
+
+<div class="school-content">
+  <h2>Equipping the Saints</h2>
+  <p>
+    The HYM School of Ministry is a two-week online program designed to equip believers with 
+    biblical knowledge, practical skills, and spiritual maturity for effective ministry. 
+    Our focus areas include:
+  </p>
+  <ul style="margin: 1rem 0 1rem 2rem;">
+    <li>Biblical literacy</li>
+    <li>Sound doctrine</li>
+    <li>Effective communication</li>
+    <li>Spiritual growth</li>
+    <li>Ministry readiness</li>
+  </ul>
+ 
+ 
+  <button class="btn" style="margin-top: 1rem;" onclick="location.href='programs.html';">
+    Learn More
+  </button>
+  </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pillars Section -->
+  <section class="pillars">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Ministries and Projects</h2>
+        <p>The ministries under HYM through which we reach out to our partners are:</p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar" data-aos="fade-up">
+          <div class="pillar-image">
+            <img src="images\prisonnew1.jpg" alt="Prison Ministry">
+          </div>
+          <i class="fas fa-hands-helping"></i>
+          <h3>Prison Ministry and Rehabilitation</h3>
+          <p>Our Prisons Ministry aims to share the transformative message of hope and redemption in Christ...</p>
+        </div>
+
+        <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+          <div class="pillar-image">
+            <img src="images\placeholder.jpg" alt="Caring for Children">
+          </div>
+          <i class="fas fa-users"></i>
+          <h3>Caring For Children Affected by Incarceration</h3>
+          <p>Recognizing the unique challenges faced by children of incarcerated parents...</p>
+        </div>
+
+        <div class="pillar" data-aos="fade-up" data-aos-delay="200">
+          <div class="pillar-image">
+            <img src="images\hospital1.jpg" alt="Hospital Ministry">
+          </div>
+          <i class="fas fa-pray"></i>
+          <h3>Hospital Care and Patient Support</h3>
+          <p>Hospital Ministry extends God's love to those facing physical and emotional challenges...</p>
+        </div>
+
+        <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+          <div class="pillar-image">
+            <img src="images\BOREHOLE2.jpg" alt="Supporting Communities and Women">
+          </div>
+          <i class="fas fa-users"></i>
+          <h3>Supporting Communities and Women</h3>
+          <p>In line with our vision of holistic transformation, we also provide practical support to communities and women...</p>
+        </div>
+
+        <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+          <div class="pillar-image">
+            <img src="images\placeholder.jpg" alt="Juvenile Aftercare Program">
+          </div>
+          <i class="fas fa-users"></i>
+          <h3>Juvenile Aftercare Program</h3>
+          <p>Our Juvenile Aftercare Program offers guidance and mentorship to young individuals transitioning back...</p>
+        </div>
+
+        <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+          <div class="pillar-image">
+            <img src="images\YOUTH PREZO.JPG" alt="Youth and Leaders Empowerment">
+          </div>
+          <i class="fas fa-users"></i>
+          <h3>Empowering Youth and Leaders</h3>
+          <p>At Hannah Yawson Ministry, empowering youth and leaders is crucial to our mission...</p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>These initiatives aim to positively impact lives, promote holistic well-being, and demonstrate compassion and love.</h2>
+        <p></p>
+      </div>
+      
+      <div class="testimonial-card" data-aos="zoom-in">
+        <div class="testimonial-text">
+          YOUTH CAREER PROGRAM
+          The Youth Leadership Program changed my life. Hannah Yawson Ministries paid for me to learn and gave me the tools I needed. In four months, I learned to fix glass windows, doors, and other glass things. I'm thankful to God for helping me get a chance to make my life better.
+        </div>
+        <div class="testimonial-author">— Yaw T.., Youth Career Program Participant</div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta" data-aos="fade-up">
+    <div class="container">
+      <h2>Ready to Experience Transformation?</h2>
+      <p>Connect with us to learn more about our programs and upcoming events.</p>
+      <button class="btn" onclick="location.href='contact.html';">Contact Us Today</button>
+    </div>
+
+    
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>HANNAH YAWSON MINISTRY</h3>
+        <p>Empowering generations through spiritual guidance and community development.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Our Ministry</a></li>
+          <li><a href="programs.html">Our Programs</a></li>
+          <li><a href="testimonies.html">Life Transformations</a></li>
+          <li><a href="blogs.html">Spiritual Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:info@hyministry.org">info@hyministry.org</a></li>
+          <li><a href="tel:+2330539871778">(+233) 053-987-1778</a></li>
+          <li><a href="tel:+2330264430204">(+233) 026-443-0204</a></li>
+          <li>W185 Corolla Street Anyaa Accra, Ghana</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+    
+
+    <div class="copyright">
+      <p>&copy; 2025 HANNAH YAWSON MINISTRY (HYM). All rights reserved.</p>
+      <p> Developed by Jay-Tech solutions </p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  // Initialize AOS animations
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  // Initialize Hero Carousel
+  const heroSwiper = new Swiper('.hero-carousel', {
+    loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+  });
+
+  // Mobile menu toggle
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('#main-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

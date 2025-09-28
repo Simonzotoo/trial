@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Our Ministries | Hannah Yawson Ministry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+  --primary: #4B0082;
+  --secondary: #FFD700;
+  --light: #f9f9f9;
+  --dark: #333;
+  --transition: all 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary);
+  transition: var(--transition);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile nav behavior */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+    :root {
+      --primary: #4B0082; /* Deep purple */
+      --secondary: #8A2BE2; /* Violet */
+      --accent: #FFD700; /* Gold */
+      --light: #F9F9F9;
+      --dark: #333;
+      --text: #333333;
+    }
+    
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(75,0,130,0.8), rgba(75,0,130,0.8)),
+                  url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-title p {
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .ministries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .ministry-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .ministry-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    
+    .ministry-image {
+      height: 250px;
+      overflow: hidden;
+    }
+    
+   .ministry-image img {
+  max-width: 260px;   /* control how wide */
+  height: auto;       /* keep proportions */
+  display: block;
+  margin: 0 auto;     /* center the logo */
+  object-fit: contain; /* prevent cropping */
+}
+
+    
+    .ministry-card:hover .ministry-image img {
+      transform: scale(1.05);
+    }
+    
+    .ministry-content {
+      padding: 2rem;
+    }
+    
+    .ministry-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .ministry-content .icon {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .ministry-tag {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Full width ministry card */
+    .full-width-card {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    
+    .full-width-card .ministry-image {
+      height: 100%;
+    }
+    
+    .cta-section {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    @media (max-width: 1024px) {
+      .ministries-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .full-width-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .ministries-grid {
+        grid-template-columns: 1fr;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+<header data-aos="fade-down">
+  <div class="container header-container">
+    <div class="logo-container">
+      <img src="images\hymlogonew.png" alt="Logo" class="logo-img">
+      <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+    </div>
+
+    <!-- Hamburger button (shown on mobile) -->
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation menu -->
+    <nav id="main-nav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="eventsandnews.html">Events and News</a>
+      <a href="blogs.html" >Blogs</a>
+       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+  <section class="hero">
+    <div class="container">
+      <h1>Our Ministries & Projects</h1>
+      <p>HYM believes in living out God's call to serve others through compassion and tangible support</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Transforming Lives Through Service</h2>
+        <p>Through our various outreach programs, we strive to bring comfort, guidance, and support to those who are often forgotten or overlooked</p>
+      </div>
+      
+      <div class="ministries-grid">
+        <!-- First row (3 ministries) -->
+        <!-- Prisons Ministry -->
+        <div class="ministry-card" data-aos="fade-up">
+          <div class="ministry-image">
+            <img src="images\placeholder.jpg" alt="Prisons Ministry">
+          </div>
+          <div class="ministry-content">
+            <span class="ministry-tag"></span>
+            <div class="icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Prisons Ministry</h3>
+            <p>Bringing hope and redemption to individuals in correctional facilities through spiritual guidance, prayer, and Bible distribution. We help inmates encounter Jesus and experience God's love and forgiveness.</p>
+            <p>Our mission is to inspire lasting change and renew purpose, affirming that no one is beyond God's grace.</p>
+          </div>
+        </div>
+        
+        <!-- Juvenile Aftercare -->
+        <div class="ministry-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="ministry-image">
+            <img src="images\placeholder.jpg" alt="Juvenile Aftercare">
+          </div>
+          <div class="ministry-content">
+            <span class="ministry-tag"></span>
+            <div class="icon">
+              <i class="fas fa-child-reaching"></i>
+            </div>
+            <h3>Juvenile Aftercare Program</h3>
+            <p>Providing guidance and mentorship to young individuals transitioning back into their communities after detention. We offer skills training, emotional support, and spiritual counseling.</p>
+            <p>Through mentorship and community connections, we help them build positive, productive futures.</p>
+          </div>
+        </div>
+        
+        <!-- Children of Incarcerated Mothers -->
+        <div class="ministry-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="ministry-image">
+            <img src="images\placeholder.jpg" alt="Children Support">
+          </div>
+          <div class="ministry-content">
+            <span class="ministry-tag"></span>
+            <div class="icon">
+              <i class="fas fa-hands-holding-child"></i>
+            </div>
+            <h3>Children of Incarcerated Mothers</h3>
+            <p>Providing emotional and spiritual support to children with incarcerated parents through mentorship, education, and community activities.</p>
+            <p>We offer stability and encouragement, reminding each child they are loved and capable of achieving their dreams despite adversity.</p>
+          </div>
+        </div>
+        
+        <!-- Hospital Ministry -->
+        <div class="ministry-card" data-aos="fade-up">
+          <div class="ministry-image">
+            <img src="images\hospital1.jpg" alt="Hospital Ministry">
+          </div>
+          <div class="ministry-content">
+            <span class="ministry-tag">Healthcare Support</span>
+            <div class="icon">
+              <i class="fas fa-hand-holding-medical"></i>
+            </div>
+            <h3>Hospital Ministry</h3>
+            <p>Extending God's love to those facing health challenges through prayer, encouragement, and companionship for isolated patients.</p>
+            <p>We provide financial support for medical expenses, helping families focus on healing and recovery during difficult times.</p>
+          </div>
+        </div>
+
+        <!-- School of Ministry -->
+        <div class="ministry-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="ministry-image">
+            <img src="images\HYM-SOM logo1 (final).png" alt="School of Ministry">
+          </div>
+            <div class="ministry-content">
+              <span class="ministry-tag"></span>
+              <div class="icon">
+                <i class="fas fa-hand-holding-medical"></i>
+              </div>
+              <h3>HYM School of Ministry</h3>
+              <p>
+                The HYM School of Ministry is a three level online teaching program that equips believers for effective and transformative ministry through biblical teaching and practical training. Combining interactive lessons, practical sessions, and personal mentoring, the program fosters spiritual depth and hands-on experience while building:
+              </p>
+              <ul>
+                <li>Biblical literacy</li>
+                <li>Sound doctrine</li>
+                <li>Effective communication</li>
+                <li>Spiritual maturity</li>
+                <li>Ministry preparedness</li>
+              </ul>
+            </div>
+
+        </div>
+        
+        <!-- Revival Services -->
+        <div class="ministry-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="ministry-image">
+            <img src="images\prayerrnew.jpg" alt="Revival Services">
+          </div>
+          <div class="ministry-content">
+            <span class="ministry-tag">Spiritual Renewal</span>
+            <div class="icon">
+              <i class="fas fa-pray"></i>
+            </div>
+            <h3>Transformative Revival Services</h3>
+            <p>Collaborating with churches to organize powerful revival services that sharpen spiritual awareness and deepen connection with God.</p>
+            <p>These gatherings bring healing, deliverance, and salvation while empowering believers to live purposeful, balanced lives.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Full width 7th ministry -->
+      <div class="ministry-card full-width-card" data-aos="fade-up">
+        <div class="ministry-image">
+          <img src="images\borehole5.jpg" alt="Women's Programs">
+        </div>
+        <div class="ministry-content">
+          <span class="ministry-tag"></span>
+          <div class="icon">
+            <i class="fas fa-people-group"></i>
+          </div>
+          <h3>Community Development Programs</h3>
+          <p>Equipping women through spiritual growth, skills development, and community support initiatives.</p>
+          <p>Our programs help women discover their God-given potential and become change agents in their families and communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Join Us in Making a Difference</h2>
+      <p>Your support can help us reach more lives with God's love and transformation</p>
+      <a href="contact.html" class="btn">Partner With Us</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+       <div class="social-links">
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+      <div class="copyright">
+        <p>&copy; 2025 Hannah Yawson Ministry. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+  <script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('#main-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

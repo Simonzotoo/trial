@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Events & News | Hannah Yawson Ministry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+      --primary: #4B0082;
+      --secondary: #FFD700;
+      --light: #f9f9f9;
+      --dark: #333;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--secondary);
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--secondary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: white;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(75, 0, 130, 0.8), rgba(75, 0, 130, 0.8)),
+                  url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+    }
+
+    /* Main Content */
+    .content-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 2rem;
+    }
+
+    /* Events Section */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .event-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .event-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .event-card:hover .event-image img {
+      transform: scale(1.05);
+    }
+
+    .event-content {
+      padding: 1.5rem;
+    }
+
+    .event-date {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .event-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .event-meta i {
+      color: var(--secondary);
+    }
+
+    /* News Section */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .news-content {
+      padding: 1.5rem;
+    }
+
+    .news-date {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-content h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .news-excerpt {
+      margin-bottom: 1rem;
+      color: #555;
+    }
+
+    .read-more {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .read-more:hover {
+      color: var(--secondary);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 1.3rem;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-3px);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+
+      nav.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav.nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header data-aos="fade-down">
+  <div class="container header-container">
+    <div class="logo-container">
+      <img src="images/hymlogonew.png" alt="Logo" class="logo-img">
+      <div class="logo-text">HANNAH YAWSON MINISTRY (HYM)</div>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="main-nav" class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="testimonies.html">Testimonies</a>
+      <a href="gallery.html">Gallery</a>
+       <a href="eventsandnews.html">Events and News</a>
+      <a href="blogs.html">Blogs</a>
+       <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Events & News</h1>
+    <p>Stay updated with our latest ministry activities, upcoming events, and inspiring stories</p>
+  </div>
+</section>
+
+<main class="content-container">
+  <!-- Upcoming Events Section -->
+  <section>
+    <div class="section-title">
+      <h2>Upcoming Events</h2>
+    </div>
+
+    <div class="events-grid">
+      <!-- Event 1 -->
+      <div class="event-card" data-aos="fade-up">
+        <div class="event-image">
+          <img src="images/prisons7.JPG" alt="Prison Ministry Conference">
+        </div>
+        <div class="event-content">
+          <span class="event-date">April 01, 2025</span>
+          <h3>Prison Ministry Conference</h3>
+          <div class="event-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Nsawam Female Prison </span>
+            <span><i class="fas fa-clock"></i> 9:00 AM - 2:00 PM</span>
+          </div>
+          <p>A 3-day conference focused on bringing hope and transformation to incarcerated individuals through spiritual guidance and rehabilitation programs.</p>
+          <a href="#" class="btn">Register Now</a>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-image">
+          <img src="images\cakes .jpg" alt="Women's Empowerment Workshop">
+        </div>
+<div class="event-content">
+  <span class="event-date">August 10, 2025</span>
+  <h3>First In-Person Retreat & Fellowship</h3>
+  <div class="event-meta">
+    <span><i class="fas fa-map-marker-alt"></i> HYM Headquarters</span>
+    <span><i class="fas fa-clock"></i> 09:00 AM - 2:00 PM</span>
+  </div>
+  <p>
+    The Ministry held its first in-person retreat and fellowship, and it was a truly uplifting experience. 
+    The joy of gathering face-to-face was refreshing, and the presence of God was evident, bringing healing, 
+    deliverance, and renewed strength. Indeed, it was a beautiful and transformative time in His presence.
+  </p>
+  <a href="#" class="btn">Learn More</a>
+</div>
+
+      </div>
+
+      <!-- Event 3 
+      <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-image">
+          <img src="images/SCHOOL2.jpg" alt="Youth Leadership Camp">
+        </div>
+        <div class="event-content">
+          <span class="event-date">September 5-7, 2025</span>
+          <h3>Youth Leadership Camp</h3>
+          <div class="event-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Aburi Mountains</span>
+            <span><i class="fas fa-clock"></i> All Day</span>
+          </div>
+          <p>3-day retreat for young leaders focusing on spiritual growth, character development, and leadership skills.</p>
+          <a href="#" class="btn">Register Now</a>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- Latest News Section 
+  <section>
+    <div class="section-title">
+      <h2>Latest News</h2>
+    </div> -->
+
+    <div class="news-grid">
+      <!-- News 1 
+      <div class="news-card" data-aos="fade-up">
+        <div class="news-content">
+          <div class="news-date">June 15, 2025</div>
+          <h3>HYM Launches New Juvenile Rehabilitation Program</h3>
+          <p class="news-excerpt">Our ministry has initiated a groundbreaking aftercare program for juvenile offenders, providing mentorship and vocational training to help them reintegrate into society.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div> -->
+
+      <!-- News 2 
+      <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="news-content">
+          <div class="news-date">May 28, 2025</div>
+          <h3>Rev. Yawson Receives Community Service Award</h3>
+          <p class="news-excerpt">Our founder was honored with the National Community Service Award for her tireless work in prison ministry and women's empowerment.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div> -->
+
+      <!-- News 3 
+      <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="news-content">
+          <div class="news-date">April 10, 2025</div>
+          <h3>New Borehole Project Completed in Rural Community</h3>
+          <p class="news-excerpt">Thanks to generous donations, we've provided clean drinking water to over 500 families in the Northern Region through our latest water project.</p>
+          <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div> -->
+    </div>
+  </section> 
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stay Connected With Our Ministry</h2>
+      <p>Subscribe to our newsletter for regular updates on events and news</p>
+      <a href="contact.html" class="btn">Subscribe Now</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  
+     <div class="social-links">
+      <a href="https://t.me/+3HEJCznONCY4YzE8"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.facebook.com/share/16ybAdeENT/"><i class="fab fa-facebook-f"></i></a>
+      <!--<a href="#"><i class="fab fa-instagram"></i></a> -->
+      <a href="https://www.youtube.com/@hannahyawson854"><i class="fab fa-youtube"></i></a>
+      <!--<a href="#"><i class="fab fa-twitter"></i></a> -->
+    </div>
+  <p>&copy; 2025 Hannah Yawson Ministry. All Rights Reserved.</p>
+  
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('#main-nav');
+
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
